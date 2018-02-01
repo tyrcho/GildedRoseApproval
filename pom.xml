@@ -23,9 +23,10 @@
         <dependency>
             <groupId>approval</groupId>
             <artifactId>Approval.Java</artifactId>
-            <version>1.0</version>
+            <version>v.019</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/ApprovalTests.jar</systemPath>
+            <!-- from https://github.com/approvals/ApprovalTests.Java/releases/tag/V.019 -->
+            <systemPath>${project.basedir}/src/test/resources/ApprovalTests.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
