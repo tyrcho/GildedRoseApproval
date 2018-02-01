@@ -2,7 +2,7 @@ package com.gildedrose;
 
 
 import org.approvaltests.combinations.CombinationApprovals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,13 +10,13 @@ import java.util.List;
 import static com.gildedrose.ItemNames.*;
 
 
-public class GildedRoseApprovalTest {
+class GildedRoseApprovalTest {
 
     @Test
-    public void updateQuality_normal_shouldDecrease() throws Exception {
+    void updateQuality_normal_shouldDecrease() throws Exception {
         String[] names = {SULFURAS, BRIE, PASS, CONJURED, "toto"};
-        Integer[] prices = {0, 10, 20};
-        Integer[] qualities = {-1, 0, 50};
+        Integer[] prices = {0, 20};
+        Integer[] qualities = {-1, 0, 1, 5, 6, 10, 50};
         CombinationApprovals.verifyAllCombinations(this::doTest, names, prices, qualities);
     }
 
