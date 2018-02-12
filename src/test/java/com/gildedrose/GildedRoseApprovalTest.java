@@ -4,9 +4,6 @@ package com.gildedrose;
 import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
 import static com.gildedrose.ItemNames.*;
 
 
@@ -20,14 +17,13 @@ class GildedRoseApprovalTest {
         CombinationApprovals.verifyAllCombinations(this::doTest, names, prices, qualities);
     }
 
-    private List<Integer> doTest(String name, int sellIn, int quality) {
+    private Item doTest(String name, int sellIn, int quality) {
         //GIVEN
         Item[] items = new Item[]{new Item(name, sellIn, quality)};
         GildedRose app = new GildedRose(items);
         //WHEN
         app.updateQuality();
-        Item item = app.items[0];
-        return Arrays.asList(item.sellIn, item.quality);
+        return app.items[0];
     }
 
 }
